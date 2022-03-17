@@ -1,7 +1,7 @@
 FROM alpine
 
 LABEL "name"="bash"
-LABEL "repository"="https://github.com/distributhor/workflow-webhook"
+LABEL "repository"="https://github.com/ClearScore/workflow-webhook"
 LABEL "version"="1.0.0"
 
 LABEL com.github.actions.name="Workflow Webhook"
