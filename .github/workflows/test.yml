@@ -14,6 +14,6 @@ jobs:
     - name: Invoke Webhook
       uses: ClearScore/workflow-webhook@v2
       env:
-        webhook_url: "${{ secrets.JENKINS_WEBHOOK_URL }}"
+        webhook_url: "https://github.spinnaker.cicd.clearscore.io/github-webhook/"
         webhook_secret: "secret"
         data: '{"version": "${{ github.event.inputs.name }}"}'
