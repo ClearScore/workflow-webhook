@@ -16,4 +16,5 @@ jobs:
       env:
         webhook_url: "https://github.spinnaker.cicd.clearscore.io/github-webhook/"
         webhook_secret: "secret"
+        verbose: true
         data: '{"version": "${{ github.event.inputs.name }}"}'
