@@ -1,0 +1,19 @@
+name: Trigger Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Build version'
+        required: true
+
+jobs:
+  invoke_webhook:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Invoke Webhook
+      uses: ClearScore/workflow-webhook@v2
+      env:
+        webhook_url: "${{ secrets.JENKINS_WEBHOOK_URL }}"
+        webhook_secret: "secret"
+        data: '{"version": "${{ github.event.inputs.name }}"}'
